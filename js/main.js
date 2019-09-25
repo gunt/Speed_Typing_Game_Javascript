@@ -1,3 +1,5 @@
+window.addEventListener('load', init);
+
 //Globals with let because it will change
 let time = 5;
 let score = 0;
@@ -27,3 +29,8 @@ const words = [
     'Always sleep well, never compromise @faizanakram99 / First, make it work. Then, make it right. Finally, make it fast. Thomas K Nilsson @thomanil',
     'It’s s alright to read the docs, even if you are an experienced developer. Treat them as they’re your best friends! Matheus Abreu @matheusabr',
 ];
+
+// Initialize Game
+function init() {
+    console.log('init');
+}
