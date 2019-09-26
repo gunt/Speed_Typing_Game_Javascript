@@ -15,22 +15,59 @@ const seconds = document.querySelector('#seconds');
 
 //Variable words array with const (permanent)
 // https://dev.to/turnerj/10-tips-for-developers-according-to-twitter-28hm
-// Tips for Developers according to Twitter (phrases)
+// Tips for Developers according to Twitter (phrases)  // To implement with phrases
+// const words = [
+//     'Talking to people can save you hours of relentless, undirected and ultimately unsatisfying coding. Marcel Gehlen',
+//     'Write your code pretending someone at 3am needs to debug/fix it in a highly critical state. Simon Rood',
+//     '"Testing" is not a valid commit message. @juperala / Aim for progress and not perfection. Sid @that_sid',
+//     'Remember your coworkers and users (and yourself) are human. Extend grace and accept it too. We are all in this together. Hayley Denbraver @hayleydenb',
+//     'For _most_ people, we are not saving lives, if your site goes down no one is going to die. Breathe and just focus on fixing it Molly Struve @molly_struve',
+//     'Give meaningful names to variables, methods and classes. Annie Garneau @annishky',
+//     'Never lose the courage and humility to say “I don’t know.” Your future self, your software, and your teammates will thank you for it. Matt Kahl @mattkahl',
+//     'Remember that everything is temporary. Technologies, tools, frameworks, and most of all frustration. Laurie @laurieontech',
+//     'Don’t stress perfection before you understand concepts. I have a bad habbit of freezing and worrying if I’m doing X the most optimized way instead of just getting it done! @bmorrisondev',
+//     'Always sleep well, never compromise @faizanakram99 / First, make it work. Then, make it right. Finally, make it fast. Thomas K Nilsson @thomanil',
+//     'It’s s alright to read the docs, even if you are an experienced developer. Treat them as they’re your best friends! Matheus Abreu @matheusabr',
+// ];
+
 const words = [
-    'Talking to people can save you hours of relentless, undirected and ultimately unsatisfying coding. Marcel Gehlen',
-    'Write your code pretending someone at 3am needs to debug/fix it in a highly critical state. Simon Rood',
-    '"Testing" is not a valid commit message. @juperala / Aim for progress and not perfection. Sid @that_sid',
-    'Remember your coworkers and users (and yourself) are human. Extend grace and accept it too. We are all in this together. Hayley Denbraver @hayleydenb',
-    'For _most_ people, we are not saving lives, if your site goes down no one is going to die. Breathe and just focus on fixing it Molly Struve @molly_struve',
-    'Give meaningful names to variables, methods and classes. Annie Garneau @annishky',
-    'Never lose the courage and humility to say “I don’t know.” Your future self, your software, and your teammates will thank you for it. Matt Kahl @mattkahl',
-    'Remember that everything is temporary. Technologies, tools, frameworks, and most of all frustration. Laurie @laurieontech',
-    'Don’t stress perfection before you understand concepts. I have a bad habbit of freezing and worrying if I’m doing X the most optimized way instead of just getting it done! @bmorrisondev',
-    'Always sleep well, never compromise @faizanakram99 / First, make it work. Then, make it right. Finally, make it fast. Thomas K Nilsson @thomanil',
-    'It’s s alright to read the docs, even if you are an experienced developer. Treat them as they’re your best friends! Matheus Abreu @matheusabr',
-];
+    'blessings',
+    'river',
+    'good',
+    'statue',
+    'generate',
+    'stubborn',
+    'food',
+    'warrior',
+    'Luke',
+    'developer',
+    'establishment',
+    'hero',
+    'javascript',
+    'nutrition',
+    'typing',
+    'echo',
+    'siblings',
+    'investigate',
+    'awesome',
+    'healthy',
+    'laughter',
+    'St. Joseph',
+    'master',
+    'space',
+    'definition'
+  ];
 
 // Initialize Game
 function init() {
-    console.log('init');
+    //Load word from array
+    showWord(words);
+}
+
+// Pick & show random word
+function showWord(words) {
+    // Generate random array index
+    const randIndex = Math.floor(Math.random() * words.length);
+    // Output random word
+    currentWord.innerHTML = words[randIndex];
 }
