@@ -6,7 +6,7 @@ window.addEventListener('load', init);
 const levels = {
     easy: 5,
     medium: 3,
-    hard: 2
+    hard: 1
 }
 
 // To change level
@@ -23,6 +23,7 @@ const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
+const chooseLevel = document.querySelector('#chooseLevel');
 
 //Variable words array with const (permanent)
 // https://dev.to/turnerj/10-tips-for-developers-according-to-twitter-28hm
@@ -71,6 +72,8 @@ const words = [
 
 // Initialize Game
 function init() {
+    // Show number of seconds in UI
+    seconds.innerHTML = currentLevel;
     // Load word from array
     showWord(words);
 
@@ -86,11 +89,16 @@ function init() {
     setInterval(checkStatus, 50);
 }
 
+// function chooseLevel() {
+//     chooseLevel.innerHTML
+// }
+
+
 // Start match // a function that match the random word to what the user type in 
 function startMatch() {
     if(matchWords()) {
         isPlaying = true;
-        time = 8;
+        time = currentLevel + 1;
         showWord(words);
         wordInput.value = '';
         score++;
