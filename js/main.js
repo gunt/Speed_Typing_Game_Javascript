@@ -1,7 +1,18 @@
 window.addEventListener('load', init);
 
 //Globals with let because it will change
-let time = 7;
+
+// Available Levels game
+const levels = {
+    easy: 5,
+    medium: 3,
+    hard: 2
+}
+
+// To change level
+const currentLevel = levels.easy;
+ 
+let time = currentLevel;
 let score = 0;
 let isPlaying;
 
