@@ -1,7 +1,7 @@
 window.addEventListener('load', init);
 
 //Globals with let because it will change
-let time = 8;
+let time = 7;
 let score = 0;
 let isPlaying;
 
@@ -79,7 +79,7 @@ function init() {
 function startMatch() {
     if(matchWords()) {
         isPlaying = true;
-        time = 9;
+        time = 8;
         showWord(words);
         wordInput.value = '';
         score++;
