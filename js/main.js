@@ -62,10 +62,35 @@ const words = [
 function init() {
     // Load word from array
     showWord(words);
+
+    // Start matching on word count  
+    //>>> Whenever we type something in here we want to fire off an event
+    //which will fire off a function
+    wordInput.addEventListener('input', startMatch )
+     
+
     // Call countdown every second
     setInterval(countdown, 1000);
     // Check game status 
     setInterval(checkStatus, 50);
+}
+
+// Start match // a function that match the random word to what the user type in 
+function startMatch() {
+    if(matchWords()) {
+        console.log('MATCH!!!');
+    }
+}
+
+// Match currentWord to wordInput
+function matchWords() {
+    if(wordInput.value === currentWord.innerHTML) {
+        message.innerHTML = 'Correct!!!';
+        return true;
+    } else {
+        message.innerHTML = '' ;
+        return false;
+    }
 }
 
 // Pick & show random word
