@@ -4,14 +4,14 @@ window.addEventListener('load', init);
 
 // Available Levels game
 const levels = {
-    easy: 5,
+    easy: 9,
     medium: 3,
     hard: 1
 }
 
 // To change level
 const currentLevel = levels.easy;
- 
+
 let time = currentLevel;
 let score = 0;
 let isPlaying;
@@ -68,7 +68,7 @@ const words = [
     'master',
     'space',
     'definition'
-  ];
+];
 
 // Initialize Game
 function init() {
@@ -80,8 +80,8 @@ function init() {
     // Start matching on word count  
     //>>> Whenever we type something in here we want to fire off an event
     //which will fire off a function
-    wordInput.addEventListener('input', startMatch )
-     
+    wordInput.addEventListener('input', startMatch)
+
 
     // Call countdown every second
     setInterval(countdown, 1000);
@@ -96,7 +96,7 @@ function init() {
 
 // Start match // a function that match the random word to what the user type in 
 function startMatch() {
-    if(matchWords()) {
+    if (matchWords()) {
         isPlaying = true;
         time = currentLevel + 1;
         showWord(words);
@@ -108,17 +108,17 @@ function startMatch() {
     if (score === -1) {
         scoreDisplay.innerHTML = 0;
     } else {
-    scoreDisplay.innerHTML = score;
+        scoreDisplay.innerHTML = score;
     }
 }
 
 // Match currentWord to wordInput
 function matchWords() {
-    if(wordInput.value === currentWord.innerHTML) {
+    if (wordInput.value === currentWord.innerHTML) {
         message.innerHTML = 'Correct!!!';
         return true;
     } else {
-        message.innerHTML = '' ;
+        message.innerHTML = '';
         return false;
     }
 }
@@ -134,10 +134,10 @@ function showWord(words) {
 // Countdown timer
 function countdown() {
     // Make sure time is not run out
-    if(time > 0) {
+    if (time > 0) {
         // Decrement
         time--;
-    } else if(time === 0) {
+    } else if (time === 0) {
         // Game is over
         isPlaying = false;
     }
@@ -147,7 +147,7 @@ function countdown() {
 
 // Check game status
 function checkStatus() {
-    if(!isPlaying && time === 0) {
+    if (!isPlaying && time === 0) {
         message.innerHTML = ' Game Over!!!';
         score = -1;
     }
